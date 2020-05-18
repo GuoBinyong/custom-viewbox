@@ -14,14 +14,14 @@ import Vue,{VNodeData,CreateElement,ComponentOptions} from "vue"
  *
  * */
 
-type GetTemplateDataHandler = (templateData:TemplateData,ViewBoxInstance:Vue,createElement:CreateElement)=>TemplateData
+export type GetTemplateDataHandler = (templateData:TemplateData,ViewBoxInstance:Vue,createElement:CreateElement)=>TemplateData
 
 
-interface TemplateData extends VNodeData {
+export interface TemplateData extends VNodeData {
     slots?:{ header?:VNode[],bottom?:VNode[],defaultSlot?:VNode[] } ; //插槽
 }
 
-type TemplateDataOrGet = TemplateData | GetTemplateDataHandler;
+export type TemplateDataOrGet = TemplateData | GetTemplateDataHandler;
 
 
 
