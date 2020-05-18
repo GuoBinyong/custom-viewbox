@@ -1,6 +1,6 @@
 
 import {ViewBox} from 'vux'
-import {configSameVnodeContext} from '@tools/VNode' ;
+import {configSameVnodeContext} from 'vnode-tls' ;
 
 /**
  *

@@ -38,5 +38,12 @@
     "eslint": "^7.0.0",
     "rollup": "^2.7.2",
     "rollup-plugin-babel": "^4.2.0"
+  },
+  "dependencies": {
+    "vnode-tls": "^1.0.0"
+  },
+  "peerDependencies": {
+    "vue": ">=2.0.0",
+    "vux": ">=2.0.0"
   }
 }
