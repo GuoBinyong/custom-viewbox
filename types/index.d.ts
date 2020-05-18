@@ -3,8 +3,8 @@ import Vue,{VNodeData,CreateElement,ComponentOptions} from "vue"
 
 
 /**
- * getTemplateDataHandle(templateData,ViewBoxInstance,createElement)=>TemplateData
- * @param templateData : TemplateData    被之前 getTemplateDataHandle 处理过的 模板数据
+ * getTemplateDataHandler(templateData,ViewBoxInstance,createElement)=>TemplateData
+ * @param templateData : TemplateData    被之前 getTemplateDataHandler 处理过的 模板数据
  * @param ViewBoxInstance : ViewBoxInstance    自定义的 ViewBox 组件的实例对象
  * @param createElement : function    vue 的 createElement 函数
  * @returns TemplateData : {
@@ -14,14 +14,14 @@ import Vue,{VNodeData,CreateElement,ComponentOptions} from "vue"
  *
  * */
 
-type GetTemplateDataHandle = (templateData:TemplateData,ViewBoxInstance:Vue,createElement:CreateElement)=>TemplateData
+type GetTemplateDataHandler = (templateData:TemplateData,ViewBoxInstance:Vue,createElement:CreateElement)=>TemplateData
 
 
 interface TemplateData extends VNodeData {
     slots?:{ header?:VNode[],bottom?:VNode[],defaultSlot?:VNode[] } ; //插槽
 }
 
-type TemplateDataOrGet = TemplateData | GetTemplateDataHandle;
+type TemplateDataOrGet = TemplateData | GetTemplateDataHandler;
 
 
 
@@ -30,8 +30,8 @@ type TemplateDataOrGet = TemplateData | GetTemplateDataHandle;
  * 创建自定义的 ViewBox 组件
  *
  * 接口1:
- * customViewBox(getTemplateDataHandle , name = "ByViewBox")
- * @param getTemplateDataHandle      可选；获取模板数据的回调函数
+ * customViewBox(getTemplateDataHandler , name = "ByViewBox")
+ * @param getTemplateDataHandler      可选；获取模板数据的回调函数
  * @param name ? : string    可选，默认值："ByViewBox" ； 自定义的 ViewBox 组件的名字
  * @returns VueComponentOptions  返回Vue组件的选项对象
  *
@@ -45,7 +45,7 @@ type TemplateDataOrGet = TemplateData | GetTemplateDataHandle;
  *
  * 接口3:
  * customViewBox(getTemplateData , name = "ByViewBox")
- * @param getTemplateData : [TemplateData|getTemplateDataHandle]      可选；数组；该数组可以包含 模版数据 templateData 或者 获取模板数据的回调函数 getTemplateDataHandle； 模版数据 templateData 会被合并, 模板数据的回调函数 getTemplateDataHandle 返回的模块数据会传给下一个 getTemplateDataHandle ；
+ * @param getTemplateData : [TemplateData|getTemplateDataHandler]      可选；数组；该数组可以包含 模版数据 templateData 或者 获取模板数据的回调函数 getTemplateDataHandler； 模版数据 templateData 会被合并, 模板数据的回调函数 getTemplateDataHandler 返回的模块数据会传给下一个 getTemplateDataHandler ；
  * @param name ? : string    可选，默认值："ByViewBox" ； 自定义的 ViewBox 组件的名字
  * @returns VueComponentOptions  返回Vue组件的选项对象
  *
@@ -53,8 +53,8 @@ type TemplateDataOrGet = TemplateData | GetTemplateDataHandle;
  *
  *
  *
- * getTemplateDataHandle(templateData,ViewBoxInstance,createElement)=>TemplateData
- * @param templateData : TemplateData    被之前 getTemplateDataHandle 处理过的 模板数据
+ * getTemplateDataHandler(templateData,ViewBoxInstance,createElement)=>TemplateData
+ * @param templateData : TemplateData    被之前 getTemplateDataHandler 处理过的 模板数据
  * @param ViewBoxInstance : ViewBoxInstance    自定义的 ViewBox 组件的实例对象
  * @param createElement : function    vue 的 createElement 函数
  * @returns TemplateData : {
