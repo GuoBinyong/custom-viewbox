@@ -1,6 +1,6 @@
 {
   "name": "custom-viewbox",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "custom-viewbox 用于创建自定义的 Vux 中的 ViewBox 组件",
   "main": "dist/custom-viewbox.cjs.js",
   "module": "dist/custom-viewbox.esm.js",
