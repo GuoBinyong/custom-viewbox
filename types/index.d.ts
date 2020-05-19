@@ -44,8 +44,8 @@ export type TemplateDataOrGet = TemplateData | GetTemplateDataHandler;
  *
  *
  * 接口3:
- * customViewBox(getTemplateData , name = "ByViewBox")
- * @param getTemplateData : [TemplateData|getTemplateDataHandler]      可选；数组；该数组可以包含 模版数据 templateData 或者 获取模板数据的回调函数 getTemplateDataHandler； 模版数据 templateData 会被合并, 模板数据的回调函数 getTemplateDataHandler 返回的模块数据会传给下一个 getTemplateDataHandler ；
+ * customViewBox(templateDataOrGet , name = "ByViewBox")
+ * @param templateDataOrGet : [TemplateData|getTemplateDataHandler]      可选；数组；该数组可以包含 模版数据 templateData 或者 获取模板数据的回调函数 getTemplateDataHandler； 模版数据 templateData 会被合并, 模板数据的回调函数 getTemplateDataHandler 返回的模块数据会传给下一个 getTemplateDataHandler ；
  * @param name ? : string    可选，默认值："ByViewBox" ； 自定义的 ViewBox 组件的名字
  * @returns VueComponentOptions  返回Vue组件的选项对象
  *
@@ -66,4 +66,4 @@ export type TemplateDataOrGet = TemplateData | GetTemplateDataHandler;
  * 注意：
  * 如果把该组件定义成函数式组件，则会出现：当把该组件嵌套使用时，内层 ViewBox 不能正常分发插槽的情况；
  */
-export default function customViewBox(getTemplateData?:TemplateDataOrGet | TemplateDataOrGet[], name?:string):ComponentOptions;
+export default function customViewBox(templateDataOrGet?:TemplateDataOrGet | TemplateDataOrGet[], name?:string):ComponentOptions;
