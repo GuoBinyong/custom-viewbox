@@ -14,7 +14,7 @@ import Vue,{VNodeData,CreateElement,ComponentOptions} from "vue"
  *
  * */
 
-export type GetTemplateDataHandler = (templateData:TemplateData,ViewBoxInstance:Vue,createElement:CreateElement)=>TemplateData
+export type GetTemplateDataHandler = (templateData:TemplateData,viewBoxInst:Vue,createElement:CreateElement)=>TemplateData
 
 
 export interface TemplateData extends VNodeData {
