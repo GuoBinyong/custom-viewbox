@@ -1,6 +1,6 @@
 {
   "name": "custom-viewbox",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "custom-viewbox 用于创建自定义的 Vux 中的 ViewBox 组件",
   "main": "dist/custom-viewbox.cjs.js",
   "module": "dist/custom-viewbox.esm.js",
@@ -29,17 +29,19 @@
     "pretest": "npm run build"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-transform-runtime": "^7.9.6",
     "@babel/preset-env": "^7.9.5",
+    "@rollup/plugin-babel": "^5.0.2",
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-node-resolve": "^7.1.3",
-    "es-expand": "^1.0.11",
     "eslint": "^7.0.0",
-    "rollup": "^2.7.2",
-    "rollup-plugin-babel": "^4.2.0"
+    "package-tls": "^1.0.2",
+    "rollup": "^2.7.2"
   },
   "dependencies": {
-    "vnode-tls": "^1.0.0"
+    "@babel/runtime": "^7.9.6",
+    "vnode-tls": "^1.0.2"
   },
   "peerDependencies": {
     "vue": ">=2.0.0",
